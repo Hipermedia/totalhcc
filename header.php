@@ -57,46 +57,52 @@
 
 <body <?php body_class(); ?>>
 
-<div class="header-wrapper">
-    <header id="header" class="header" role="banner" >
-                
-            <!-- Logo -->
-            <a href="<?php inicio_url(); ?>" id="header-logo" class="logo  animated flipInX">
-                <img src="<?php print_ot('logo', get_plantilla_url().'/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>">
-            </a>
-            
-            <!-- Redes sociales -->
-            <div id="header-social" class="social">
-                <!-- Facebook -->
-                <?php if (get_ot('fb_url') != '') { ?>
-                    <a href="<?php print_ot('fb_url', ''); ?>" title="Facebook" target="_blank"><i class="fa fa-facebook-square fa-3x"></i></a>
-                <?php }  ?>
-                <!-- Twitter -->
-                <?php if (get_ot('tw_url') != '') { ?>
-                    <a href="<?php print_ot('tw_url', ''); ?>"title="Twitter" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a>
-                <?php }  ?>
-                <!-- Youtube -->
-                <?php if (get_ot('yt_url') != '') { ?>
-                    <a href="<?php print_ot('yt_url', ''); ?>" title="Youtube" target="_blank"><i class="fa fa-youtube-square fa-3x"></i></a>
-                <?php }  ?>
-                <!-- Google Plus -->
-                <?php if (get_ot('gp_url') != '') { ?>
-                    <a href="<?php print_ot('gp_url', ''); ?>" title="Google Plus" target="_blank"><i class="fa fa-google-plus-square fa-3x"></i></a>
-                <?php }  ?>      
-            </div><!-- #social -->
-            
-            <!-- Formulario de búsqueda -->
-            <?php get_search_form(); ?>
-            
-            <!-- Menú principal -->        
-            <nav id="header-main-nav" class="main-nav" role="navigation">
-                <!-- Icono de menú para versión adaptativa -->
-                <a class="toggle-nav" href="#">MENU DE NAVEGACIÓN</a>
-                <!-- Menu WordPress -->
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => 'activo', 'menu_id' => 'header-menu') ); ?>
-            </nav>
+<!-- <div class="header-wrapper"> -->
+<header id="header" class="header" role="banner" >
+    <div class="header-contenedor1">
+        <p class="fecha">Lunes 27 de julio de 2015</p>
+        <!-- Redes sociales -->
+        <div id="header-social" class="social">
+            <!-- Facebook -->
+            <?php if (get_ot('fb_url') != '') { ?>
+                <a href="<?php print_ot('fb_url', ''); ?>" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            <?php }  ?>
+            <!-- Twitter -->
+            <?php if (get_ot('tw_url') != '') { ?>
+                <a href="<?php print_ot('tw_url', ''); ?>"title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+            <?php }  ?>
+            <!-- Youtube -->
+            <?php if (get_ot('lin_url') != '') { ?>
+                <a href="<?php print_ot('lin_url', ''); ?>" title="Youtube" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <?php }  ?>
+            <!-- Google Plus -->
+            <?php if (get_ot('gp_url') != '') { ?>
+                <a href="<?php print_ot('gp_url', ''); ?>" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+            <?php }  ?>      
+        </div><!-- #social -->
+        <!-- Formulario de búsqueda -->
+        <?php get_search_form(); ?>
+        <div class="language">
+            <a class="esp" href="">ESP</a>
+            <a class="eng" href="">ENG</a>
+        </div>
+    </div>
 
-    </header>
-</div>
+    <!-- Logo -->
+    <div class="logo-contenedor">
+      <a href="<?php inicio_url(); ?>" id="header-logo" class="logo  animated flipInX">
+          <img src="<?php print_ot('logo', get_plantilla_url().'/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>">
+      </a>  
+    </div>
+
+    <!-- Menú principal -->        
+    <nav id="header-main-nav" class="main-nav" role="navigation">
+        <!-- Icono de menú para versión adaptativa -->
+        <a class="toggle-nav" href="#">MENU DE NAVEGACIÓN</a>
+        <!-- Menu WordPress -->
+        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => 'activo', 'menu_id' => 'header-menu') ); ?>
+    </nav>
+</header>
+<!-- </div> -->
 
 <main class="content-wrapper">

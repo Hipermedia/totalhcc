@@ -4,7 +4,7 @@
 
 /* Fuentes
 ------------*/
-$global-font: sans-serif;
+$global-font: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 
 /* Colores
 ------------*/
@@ -12,13 +12,20 @@ $body-bg: #efefef;
 $header-bg: #fff;
 $footer-bg: #fff;
 
-$text-color: #666666;
+$text-color: #fff;
+$text-sub-color1: #e14d10;
+$text-sub-color2: #0e2c56;
+
+$block-bg-color1: #dddddd;
+$block-bg-color2: #0e2c56;
+$block-bg-color3: #FF4C00;
+
 $link-color: #0055A4;
 $link-hover-color: #2174BC;
 
 /* Tamaños
 ------------*/
-$header-height: 120px;
+$header-height: 300px;
 $desktop-width: 1100px;
 $tablet-width: 768px;
 $smaller-width: 500px;
