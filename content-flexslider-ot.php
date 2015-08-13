@@ -108,7 +108,7 @@
                         <li>
                             <a href="<?php echo $slide['slide_url']; ?>">
                                 <img src="<?php echo $slide['slide_img']; ?>" alt="<?php $slide['title']; ?>" />
-                                <h3><?php echo $slide['title']; ?></h3>
+                                <!-- <h3><?php //echo $slide['title']; ?></h3> -->
                             </a>
                         </li>
                     <?php } ?>
