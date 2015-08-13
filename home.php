@@ -19,6 +19,24 @@ get_header(); ?>
 	<!-- Flexslider vía OT -->
 	<?php get_template_part( 'content', 'flexslider-ot' ); ?>
     
+    <?php $bloques_en_tres = get_ot('bloqueentres', array()); ?>
+    <?php if($bloques_en_tres) : ?>
+    <div class="bloques-en-tres">
+        <?php foreach ($bloques_en_tres as $bloque ) { ?>
+            <a href="<?php echo $bloque['link']; ?>">
+                <div class="bloque">
+                    <figure>
+                        <img src="<?php echo $bloque['image']; ?>" alt="<?php echo $bloque['title']; ?>">
+                    </figure>
+                    <h3><?php echo $bloque['title']; ?></h3>
+                    <p>
+                        <?php echo $bloque['description']; ?>
+                    </p>
+                </div>
+            </a>
+        <?php } ?>
+    </div>
+    <?php endif; ?>
     <!-- Artículos en portada -->
     <?php 
         $catid = get_ot('categoria_portada', ''); 
