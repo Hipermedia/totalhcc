@@ -45,22 +45,22 @@ get_header(); ?>
         $args = array( 
             'cat' => $catid, 
             'posts_per_page' => $post_per_page, 
-            'paged' => get_query_var('paged'), 
+            //'paged' => get_query_var('paged'), 
             );
         $consulta = new WP_Query( $args );
     ?> 
     <?php if ( $consulta ->have_posts() ) :   ?>
         <section class="articulos">
             
-            <a class="articulos-titulo" href="#">
+            <p class="articulos-titulo" href="#">
                 <?php print_ot('titulo_categoria_portada', ''); ?>
-            </a>
+            </p>
             
             <?php while ( $consulta->have_posts() ) : $consulta->the_post(); ?>                         
                 <?php get_template_part( 'content', get_post_format() ); ?>
             <?php endwhile; ?>                
 
-            <?php the_numbered_nav(); ?>        
+            <?php //the_numbered_nav(); ?>        
 
         </section>
 

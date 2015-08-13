@@ -115,19 +115,68 @@
 
 
 	.articulos {
+		padding: 5rem 0 0 0;
+		background: $block-bg-color2;
 		vertical-align: top;
-		margin: 0 18px;
 		margin-bottom: 2em;
 		border-bottom: solid 1px #ddd;
+		margin-top: -2rem;
 
 		@media (max-width: $desktop-width) {
 			width: 94%;
 			margin: 3%;
 		}
+
+		.articulos-titulo {
+			color: $text-color;
+			font-size: 2rem;
+			font-weight: bold;
+			border-bottom: 3px white solid;
+			margin: 0;
+			padding: 1rem 0;
+			text-transform: uppercase;
+		}
+
+		article.articulos {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			width: 30%;
+			padding: 0 1rem;
+
+			.titulo {
+				line-height: .8;
+
+				a{
+					color: $text-sub-color1;
+					text-transform: uppercase;
+					font-size: 1.1rem;
+					font-weight: bold;
+				}
+
+			}
+
+			.meta {
+
+			}
+
+			.resumen {
+
+				.thumb {
+
+				}
+			}
+		}
+
+		article.articulos:nth-child(2n+1) {
+			margin: 0 5%;
+		}
 	}
+
 	.articulos #content article {
 		padding: 0;	
 	}
+
 	a.articulos-titulo {
 		clear: both;
 		color: #818181;
@@ -142,19 +191,19 @@
 		display: block;
 	}
 
-	.sidebar {
+/*	.sidebar {
 	    padding: 0;
 
 		.widget-title {
 		    margin-top: 0;
 		}
-	}
+	}*/
 }
 
 
 
 /* Flexslider - Galería medios */
-#galeria-medios  {
+/*#galeria-medios  {
 	border: none;
 	margin: 0px;
 	box-shadow: none;
@@ -183,4 +232,4 @@
 }
 #galeria-medios .slides li img {
 	width: 196px;
-}
+}*/
