@@ -1,0 +1,53 @@
+.custom-articulos {
+	width: 80%;
+
+	.titulo-categoria {
+		margin-bottom: 2rem;
+		font-size: 4rem;
+		color: $text-sub-color1;
+	}
+
+	.articulo-resumen {
+		overflow: hidden;
+
+		.entry-thumbnail {
+			width: 30%;
+			float: left;
+			display: block;
+			padding: 0;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.content-resto-articulo {
+			width: 70%;
+			float: left;
+			display: block;
+			text-align: justify;
+			color: $text-sub-color2;
+
+
+			.entry-title {
+
+				a{
+					color: $text-sub-color2;
+
+				}
+			}
+
+			.entry-summary {
+				border-bottom: 3px $text-sub-color1 solid;
+
+				p {
+
+				}
+			}
+
+			.entry-autor {
+
+			}
+		}
+	}
+}

@@ -9,34 +9,35 @@
  */
 
 get_header(); ?>
-<div id="primary">
-    <div id="content" role="main">
-
-        <?php while ( have_posts() ) : the_post(); ?>
-
-            <article>
-                <header class="page-header">
-                	<h1 class="page-title"><?php the_title(); ?></h1>
-                </header><!-- .entry-header -->
-                
-                <section class="entry-content">
-                	<?php the_content(); ?>
-                </section><!-- .entry-content -->
-                
-                <section class="entry-resumen">
-					<?php get_template_part( 'content', 'resumen-contenido-acf' ); ?>
-                </section><!-- .entry-content -->
-
-                <footer class="entry-footer">
-					<?php the_social_share(); ?>
-            	</footer><!-- .entry-footer -->	
-                
-         	</article><!-- #post-<?php the_ID(); ?> -->	
-          
-		  <?php endwhile; // end of the loop. ?>
-            
-    </div><!-- #content -->
-</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+<?php //Query para la categoría seleccionada                    
+$args = array( 'cat' => 2, 'posts_per_page' => 3, 'paged' => get_query_var('paged'), );
+$consulta = new WP_Query( $args );?>          
+<?php if ( $consulta ->have_posts() ) :   ?>
+    <section class="custom-articulos">
+        <h2 class="titulo-categoria"><?php echo get_cat_name(2); ?></h2>
+        <?php while ( $consulta->have_posts() ) : $consulta->the_post(); ?>
+            <article class="articulo-resumen">
+                <?php if ( has_post_thumbnail() ) { ?>
+                    <figure class="entry-thumbnail">
+                        <?php the_post_thumbnail('medium'); ?>
+                    </figure>
+                <?php } ?>
+                <div class="content-resto-articulo">
+                    <h2 class="entry-title">
+                        <a href="<?php the_permalink(); ?>" rel="bookmark">
+                            <?php the_title(); ?>
+                        </a>
+                    </h2>
+                    <div class="entry-summary">
+                        <?php the_excerpt(); ?>
+                    </div><!-- .entry-summary -->
+                    <h4 class="entry-autor">Publicado por <?php the_author(); ?></h4>
+                </div>
+            </article>
+        <?php endwhile; ?>
+    </section>
+    <!-- PAGINACIÓN CUSTOM QUERIES -->
+    <?php the_custom_numbered_nav( $consulta ); ?>   
+<?php endif; ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
