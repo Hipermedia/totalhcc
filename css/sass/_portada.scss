@@ -54,6 +54,7 @@
 		margin-top: -50px;
 		position: relative;
 		z-index: 9999;
+		display: inline-block;
 		
 		a {
 
@@ -118,8 +119,7 @@
 		padding: 5rem 0 0 0;
 		background: $block-bg-color2;
 		vertical-align: top;
-		margin-bottom: 2em;
-		border-bottom: solid 1px #ddd;
+		/*margin-bottom: 2em;*/
 		margin-top: -2rem;
 
 		@media (max-width: $desktop-width) {
@@ -161,6 +161,7 @@
 			}
 
 			.resumen {
+				border-bottom: 2px $block-bg-color3 solid;
 
 				.thumb {
 
